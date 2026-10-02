@@ -1,0 +1,21 @@
+{
+  "name": "plate-planner",
+  "private": true,
+  "version": "1.0.0",
+  "description": "96 孔板浓度梯度配液计算、板位分配与操作记录（同一份事实）",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w web && tsc -p server/tsconfig.json",
+    "start": "npm run start -w server",
+    "test": "npm run test -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.6.3"
+  }
+}
