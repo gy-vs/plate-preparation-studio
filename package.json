@@ -1,0 +1,17 @@
+{
+  "name": "plate-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "96 孔板浓度梯度配液与板位分配（服务端统一计算，单一事实源）",
+  "workspaces": [
+    "shared",
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build -w server && npm run build -w web",
+    "start": "npm run start -w server",
+    "test": "npm run test -w server"
+  }
+}
